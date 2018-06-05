@@ -15,8 +15,14 @@
         <activity android:name=".Home"></activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_home"
+            android:label="@string/app_name"
+            android:icon="@drawable/calm"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <!-- <activity android:name=".Sungai" /> -->
@@ -25,11 +31,7 @@
         <activity android:name=".DetailSungai" />
         <activity android:name=".DetailMonitoring" />
         <activity android:name=".Splash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

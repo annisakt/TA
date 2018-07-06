@@ -56,7 +56,7 @@ public class Monitoring extends Fragment {
     private void loadJSON() {
         swipeRefreshLayout.setRefreshing(true);
         ApiService service = UtilsApi.getClient().create(ApiService.class);
-        Call<JsonList> call = service.getRekap("http://192.168.1.31/api/get_datarekap.php");
+        Call<JsonList> call = service.getRekap("http://192.168.43.92/api/get_datarekap.php");
         call.enqueue(new Callback<JsonList>() {
             @Override
             public void onResponse(Call<JsonList> call, Response<JsonList> response) {

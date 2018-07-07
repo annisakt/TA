@@ -34,9 +34,6 @@ public class DataSungai {
     @SerializedName("gambar")
     @Expose
     private String gambar;
-    @SerializedName("categories")
-    @Expose
-    private String categories;
 
     public String getIdSungai() {
         return idSungai;
@@ -109,13 +106,4 @@ public class DataSungai {
     public void setGambar(String gambar) {
         this.gambar = gambar;
     }
-
-    public String getCategories() {
-        return categories;
-    }
-
-    public void setCategories(String categories) {
-        this.categories = categories;
-    }
-
 }

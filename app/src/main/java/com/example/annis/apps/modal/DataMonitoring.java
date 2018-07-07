@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class DataMonitoring {
-    @SerializedName("id_rekap")
+    @SerializedName("id")
     @Expose
     private String idRekap;
     @SerializedName("nama_sungai")

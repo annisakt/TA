@@ -1,5 +1,6 @@
 package com.example.annis.apps;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -50,13 +51,25 @@ public class Monitoring extends Fragment {
         recyclerView.setAdapter(monitoringAdapter);
         swipeRefreshLayout =(SwipeRefreshLayout)rootView.findViewById(R.id.swipe);
         loadJSON();
+        final int speedScroll = 10000;
+        final Handler handler = new Handler();
+        final Runnable runnable = new Runnable() {
+            int count = 0;
+            @Override
+            public void run() {
+            loadJSON();
+            handler.postDelayed(this, speedScroll);
+            }
+        };
+
+        handler.postDelayed(runnable,speedScroll);
         return rootView;
     }
 
     private void loadJSON() {
         swipeRefreshLayout.setRefreshing(true);
         ApiService service = UtilsApi.getClient().create(ApiService.class);
-        Call<JsonList> call = service.getRekap("http://192.168.43.92/api/get_datarekap.php");
+        Call<JsonList> call = service.getRekap("http://simonir.com/api/get_datarekap.php");
         call.enqueue(new Callback<JsonList>() {
             @Override
             public void onResponse(Call<JsonList> call, Response<JsonList> response) {
@@ -67,7 +80,7 @@ public class Monitoring extends Fragment {
                 recyclerView.setAdapter(adapter);
                 Toast.makeText(getContext(), "data berhasil", Toast.LENGTH_LONG).show();
                 Log.d("data", data.get(0).getKetinggian());
-    }
+            }
             @Override
             public void onFailure(Call<JsonList> call, Throwable t) {
                 Log.d("Error", t.getMessage());

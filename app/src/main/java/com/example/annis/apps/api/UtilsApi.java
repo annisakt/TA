@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class UtilsApi {
 
 
-    public static final String BASE_URL = "http://192.168.43.92/api/";
+    public static final String BASE_URL = "http://simonir.com/api/";
     private static Retrofit retrofit = null;
     // variable to hold context
     private static Context context;

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:padding="50dp"
     android:layout_marginTop="50dp"
+    android:background="@drawable/simonir5"
     tools:context="com.example.annis.apps.Pengaduan">
 
     <TextView

@@ -34,8 +34,8 @@ public class DetailMonitoring extends AppCompatActivity {
 
         txtnama2.setText(getIntent().getStringExtra("NamaSungai"));
         txtketinggian.setText(getIntent().getStringExtra("Ketinggian"));
-//        txtstatus.setText(getIntent().getStringExtra("Status"));
-//        txtwaktu.setText(getIntent().getStringExtra("Waktu"));
+        txtstatus.setText(getIntent().getStringExtra("Status"));
+        txtwaktu.setText(getIntent().getStringExtra("Waktu"));
     }
 
     @Override

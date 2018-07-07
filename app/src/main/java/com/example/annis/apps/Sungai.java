@@ -53,7 +53,7 @@ public class Sungai extends Fragment {
     private void loadJSON() {
         swipeRefreshLayout.setRefreshing(true);
         ApiService service = UtilsApi.getClient().create(ApiService.class);
-        Call<JsonList> call = service.getData("http://192.168.43.92/api/get_datasungai.php");
+        Call<JsonList> call = service.getData("http://simonir.com/api/get_datasungai.php");
         call.enqueue(new Callback<JsonList>() {
             @Override
             public void onResponse(Call<JsonList> call, Response<JsonList> response) {

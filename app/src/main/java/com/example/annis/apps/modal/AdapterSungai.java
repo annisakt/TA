@@ -6,11 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.annis.apps.DetailSungai;
 import com.example.annis.apps.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -38,6 +40,7 @@ public class AdapterSungai extends RecyclerView.Adapter<AdapterSungai.ViewHolder
         viewHolder.idSungai.setText(datas.get(i).getIdSungai());
         viewHolder.NamaSungai.setText(datas.get(i).getNamaSungai());
         viewHolder.LokasiSungai.setText(datas.get(i).getLokasiSungai());
+        Picasso.with(context).load(datas.get(i).getGambar()).placeholder(R.drawable.ic_launcher_background).resize(150, 150).into(viewHolder.imageView);
     }
 
     @Override
@@ -47,6 +50,7 @@ public class AdapterSungai extends RecyclerView.Adapter<AdapterSungai.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView idSungai, NamaSungai, LokasiSungai;
+        private ImageView imageView;
 
         public ViewHolder(View view) {
             super(view);
@@ -54,6 +58,7 @@ public class AdapterSungai extends RecyclerView.Adapter<AdapterSungai.ViewHolder
             idSungai = (TextView) view.findViewById(R.id.idSungai);
             NamaSungai = (TextView) view.findViewById(R.id.NamaSungai);
             LokasiSungai = (TextView)view.findViewById(R.id.LokasiSungai);
+            imageView =(ImageView)view.findViewById(R.id.img1);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

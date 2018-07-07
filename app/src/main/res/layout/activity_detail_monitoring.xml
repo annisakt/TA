@@ -10,7 +10,6 @@
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
         android:id="@+id/toolbar1"        >
         <TextView
             android:layout_width="match_parent"
@@ -23,20 +22,25 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Banjir"
-        android:layout_gravity="center"
-        />
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_margin="16dp"
         android:background="@drawable/rounded"
+        android:layout_height="match_parent"
         >
+        <TextView
+            android:id="@+id/judul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Banjir"
+            android:gravity="center"
+            />
         <LinearLayout
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/layout1"
+            android:layout_below="@id/judul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -66,6 +70,10 @@
         </LinearLayout>
         <!--ISI DATABASE-->
         <LinearLayout
+            android:layout_below="@id/judul"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/layout1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -99,6 +107,6 @@
                 android:text="Waktu"
                 android:id="@+id/waktu"/>
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>
